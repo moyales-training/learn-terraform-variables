@@ -141,3 +141,7 @@ resource "aws_ebs_volume" "unencrypted" {
   size              = 8
   encrypted         = true # Remediated: enable encryption
 }
+
+resource "aws_ec2_instance_metadata_defaults" "enforce_imdsv2" {
+  http_tokens = "required"
+}
